@@ -10,6 +10,7 @@ ___________ __                   __            __                 __
 # Intro
 
 This repository contains a collection of scripts and programs used in my PhD thesis at the Universidad Politécnica de Madrid.
+
 The thesis focuses on the development of Partial Discharges generator based on an Arbitrary Waveform Generator (AWG).
 
 # Python scripts

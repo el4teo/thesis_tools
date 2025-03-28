@@ -7,7 +7,7 @@
     "n_samples_to_read": 2000000,
     "fft_xlin_min_Hz": 1000,
     "fft_xlin_max_Hz": 30000000,
-    "log_level": "DEBUG",
+    "log_level": "INFO",
     "show_figure": false,
     "export_png": true
 }

@@ -42,8 +42,8 @@ class bin_plotter:
         # File parameters
         self.config_file = "./python/bin_plotter_config.json"
         self.log_file = "./python/bin_plotter.log"
-        self.logger = logging.getLogger(__name__)
         self.filename = filename
+        self.logger = logging.getLogger(__name__ + self.filename)
         
         # Data variables
         self.samples = None
@@ -63,6 +63,7 @@ class bin_plotter:
         
     def __del__(self):
         self.save_current_config()
+        plt.close(self.fig)
 
     def config_logging(self):
         if self.config_data["log_level"] == "CRITICAL":
