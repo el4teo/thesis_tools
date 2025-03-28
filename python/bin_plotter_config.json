@@ -5,8 +5,8 @@
     "sampling_rate_MSps": 100,
     "amplitude_range": 1,
     "n_samples_to_read": 2000000,
-    "fft_xlin_min_Hz": 1000,
-    "fft_xlin_max_Hz": 30000000,
+    "fft_xlim_min_Hz": 1000,
+    "fft_xlim_max_Hz": 30000000,
     "log_level": "INFO",
     "show_figure": false,
     "export_png": true

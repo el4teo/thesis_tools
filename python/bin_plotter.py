@@ -29,8 +29,8 @@ class bin_plotter:
         self.config_data["sampling_rate_MSps"] = 100
         self.config_data["amplitude_range"] = 1
         self.config_data["n_samples_to_read"] = 2000000 # -1 means all of them
-        self.config_data["fft_xlin_min_Hz"] = 1
-        self.config_data["fft_xlin_max_Hz"] = 30000000
+        self.config_data["fft_xlim_min_Hz"] = 1
+        self.config_data["fft_xlim_max_Hz"] = 30000000
         self.config_data["log_level"] = "INFO"
         self.config_data["show_figure"] = True
         self.config_data["export_png"] = True
@@ -142,13 +142,13 @@ class bin_plotter:
             self.ax_fft.set_ylabel("Magnitude (dB)")
             self.ax_fft.set_xscale("log")
             # self.ax_fft.set_xlim(min(x_fft[x_fft > 0]), max(x_fft))  # Evita 0 en escala log
-            fft_xlin_min_Hz = min(x_fft[x_fft > 0])
-            fft_xlin_max_Hz = max(x_fft)
-            if 0 < self.config_data["fft_xlin_min_Hz"] and self.config_data["fft_xlin_min_Hz"] < self.config_data["fft_xlin_max_Hz"]:
-                fft_xlin_min_Hz = self.config_data["fft_xlin_min_Hz"]
-                fft_xlin_max_Hz = self.config_data["fft_xlin_max_Hz"]
+            fft_xlim_min_Hz = min(x_fft[x_fft > 0])
+            fft_xlim_max_Hz = max(x_fft)
+            if 0 < self.config_data["fft_xlim_min_Hz"] and self.config_data["fft_xlim_min_Hz"] < self.config_data["fft_xlim_max_Hz"]:
+                fft_xlim_min_Hz = self.config_data["fft_xlim_min_Hz"]
+                fft_xlim_max_Hz = self.config_data["fft_xlim_max_Hz"]
 
-            self.ax_fft.set_xlim(fft_xlin_min_Hz, fft_xlin_max_Hz)  
+            self.ax_fft.set_xlim(fft_xlim_min_Hz, fft_xlim_max_Hz)  
             self.ax_fft.set_ylim(min(y_fft_db), max(y_fft_db) + 10)  
              
     def read_bin_file(self):
